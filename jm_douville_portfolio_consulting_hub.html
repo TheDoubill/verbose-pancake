@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jean-Marc Douville — Live Experiences, Brand Strategy & Game Design</title>
+    <meta name="description" content="Official portfolio and advisory hub for Jean-Marc Douville — Senior Event Content Producer at Fan Expo HQ, Principal at JMFS Consulting, Educator at Mohawk College, and Game Designer.">
+    
+    <!-- Google Fonts: Space Grotesk (Display), Inter (Body), JetBrains Mono (Micro) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#09090B',
+                        surface: '#121215',
+                        'surface-hover': '#18181C',
+                        amberAccent: '#F59E0B',
+                        'amberAccent-hover': '#D97706',
+                        offwhite: '#FAFAFA',
+                        zincMuted: '#A1A1AA',
+                        zincDark: '#27272A'
+                    },
+                    fontFamily: {
+                        display: ['Space Grotesk', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Hairline borders & refined editorial touch */
+        .border-hairline {
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+        .border-hairline-hover:hover {
+            border-color: rgba(245, 158, 11, 0.4);
+        }
+        
+        /* Smooth custom scrollbars */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #09090B;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272A;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #F59E0B;
+        }
+
+        /* Slide-Over Drawer Transitions */
+        .drawer-backdrop {
+            transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .drawer-content {
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Filter active indicator animation */
+        .filter-btn-active {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #FAFAFA;
+            border-color: rgba(245, 158, 11, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-obsidian text-offwhite font-body antialiased selection:bg-amberAccent selection:text-obsidian min-h-screen flex flex-col relative overflow-x-hidden">
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <!-- 1. MINIMALIST STICKY TOP BAR -->
+    <header class="sticky top-0 z-40 w-full bg-obsidian/95 backdrop-blur-md border-b border-hairline">
+        <!-- Top Tier: Brand Wordmark & Primary Action -->
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 h-16 flex items-center justify-between border-b border-hairline/40">
+            
+            <!-- Brand Wordmark with Adobe CC-Style Monogram Badge -->
+            <a href="#hero" class="group flex items-center gap-3">
+                <!-- Adobe CC Style Monogram Square Icon -->
+                <div class="w-8 h-8 rounded-lg bg-[#141418] border-2 border-amberAccent flex items-center justify-center font-display font-bold text-xs text-amberAccent shadow-md select-none tracking-tighter group-hover:bg-amberAccent group-hover:text-obsidian transition-all duration-300">
+                    JM
+                </div>
+                <span class="font-display font-bold text-base tracking-tight text-offwhite group-hover:text-amberAccent transition-colors">
+                    JMDOUVILLE.COM
+                </span>
+            </a>
+
+            <!-- Action CTA & Mobile Menu Toggle -->
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-hairline bg-surface hover:bg-amberAccent hover:text-obsidian hover:border-amberAccent text-xs font-mono font-medium transition-all duration-300">
+                    Get in Touch
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="md:hidden p-2 text-zincMuted hover:text-offwhite focus:outline-none">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+                        <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Bottom Tier: Sub-Row Dedicated Navigation Bar -->
+        <div class="hidden md:block max-w-7xl mx-auto px-6 lg:px-12 py-2.5 bg-obsidian/60">
+            <nav class="flex items-center gap-8 text-xs font-mono tracking-wider text-zincMuted">
+                <a href="#work" class="hover:text-amberAccent transition-colors">01 / WORK</a>
+                <a href="#capabilities" class="hover:text-amberAccent transition-colors">02 / CAPABILITIES</a>
+                <a href="#archive" class="hover:text-amberAccent transition-colors">03 / ARCHIVE</a>
+                <a href="#about" class="hover:text-amberAccent transition-colors">04 / ABOUT</a>
+                <a href="#contact" class="hover:text-amberAccent transition-colors">05 / CONTACT</a>
+            </nav>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-hairline bg-surface/95 backdrop-blur-xl px-6 py-6 space-y-4">
+            <a href="#work" class="mobile-nav-link block font-mono text-xs text-zincMuted hover:text-amberAccent py-2">01 / WORK</a>
+            <a href="#capabilities" class="mobile-nav-link block font-mono text-xs text-zincMuted hover:text-amberAccent py-2">02 / CAPABILITIES</a>
+            <a href="#archive" class="mobile-nav-link block font-mono text-xs text-zincMuted hover:text-amberAccent py-2">03 / ARCHIVE</a>
+            <a href="#about" class="mobile-nav-link block font-mono text-xs text-zincMuted hover:text-amberAccent py-2">04 / ABOUT</a>
+            <a href="#contact" class="mobile-nav-link block font-mono text-xs text-zincMuted hover:text-amberAccent py-2">05 / CONTACT</a>
+            <div class="pt-4 border-t border-hairline">
+                <a href="#contact" class="mobile-nav-link w-full text-center block py-3 text-xs font-mono font-semibold text-obsidian bg-amberAccent rounded-lg">
+                    Start a Conversation
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow z-10">
+
+        <!-- 2. HIGH-IMPACT HERO SECTION -->
+        <section id="hero" class="pt-24 pb-20 lg:pt-36 lg:pb-32 max-w-7xl mx-auto px-6 lg:px-12 border-b border-hairline">
+            <div class="max-w-4xl space-y-8">
+                
+                <!-- Status Tag -->
+                <div class="inline-flex items-center gap-3 px-3.5 py-1.5 rounded-full border border-hairline bg-surface text-xs font-mono text-zincMuted">
+                    <span class="w-2 h-2 rounded-full bg-amberAccent animate-pulse"></span>
+                    <span>BURLINGTON / TORONTO · AVAILABLE FOR ADVISORY & SPEAKING</span>
+                </div>
+
+                <!-- Display Headline -->
+                <h1 class="font-display font-bold text-4xl sm:text-6xl lg:text-7xl tracking-tight text-offwhite leading-[1.08]">
+                    Architecting Live Experiences, Brand Ecosystems & Playable Worlds.
+                </h1>
+
+                <!-- Executive Summary -->
+                <p class="text-base sm:text-xl text-zincMuted font-light leading-relaxed max-w-3xl">
+                    Senior Event Content & Programming Producer at <strong class="text-offwhite font-medium">Fan Expo HQ</strong>, Founder & Principal at <strong class="text-offwhite font-medium">JMFS Consulting</strong>, Educator at <strong class="text-offwhite font-medium">Mohawk College</strong>, and Game Systems Designer. Designing 360° physical and digital entertainment ecosystems across Canada and North America.
+                </p>
+
+                <!-- Action Links -->
+                <div class="pt-4 flex flex-wrap items-center gap-4">
+                    <a href="#work" class="px-6 py-3.5 rounded-full bg-offwhite hover:bg-amberAccent text-obsidian font-mono font-semibold text-xs tracking-wider uppercase transition-all duration-300 flex items-center gap-2">
+                        <span>Selected Work</span>
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </a>
+                    <a href="#contact" class="px-6 py-3.5 rounded-full border border-hairline bg-surface hover:border-amberAccent hover:text-amberAccent text-offwhite font-mono font-semibold text-xs tracking-wider uppercase transition-all duration-300">
+                        Start a Conversation
+                    </a>
+                </div>
+            </div>
+
+            <!-- Client & Partner Wordmark Strip -->
+            <div class="mt-24 pt-10 border-t border-hairline">
+                <p class="font-mono text-[10px] uppercase tracking-widest text-zincMuted mb-6">PRODUCED & CONSULTED FOR INDUSTRY LEADERS</p>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center text-zincMuted font-display font-semibold text-xs tracking-widest uppercase opacity-75">
+                    <div class="hover:text-amberAccent transition-colors">FAN EXPO HQ</div>
+                    <div class="hover:text-amberAccent transition-colors">CRUNCHYROLL</div>
+                    <div class="hover:text-amberAccent transition-colors">MOHAWK COLLEGE</div>
+                    <div class="hover:text-amberAccent transition-colors">ANIME NORTH</div>
+                    <div class="hover:text-amberAccent transition-colors">ENTHUSIAST GAMING</div>
+                    <div class="hover:text-amberAccent transition-colors">TEAM SALVATO</div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 3. SELECTED WORK & CASE STUDIES -->
+        <section id="work" class="py-24 lg:py-32 max-w-7xl mx-auto px-6 lg:px-12 border-b border-hairline">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+                <div>
+                    <span class="font-mono text-xs uppercase tracking-widest text-amberAccent">SELECTED WORK</span>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-offwhite mt-2">Case Studies & Key Projects</h2>
+                </div>
+
+                <!-- Minimal Category Filters -->
+                <div class="flex flex-wrap gap-2">
+                    <button class="filter-btn filter-btn-active px-4 py-2 rounded-full border border-hairline font-mono text-xs text-zincMuted hover:text-offwhite transition-all" data-filter="all">All (6)</button>
+                    <button class="filter-btn px-4 py-2 rounded-full border border-hairline font-mono text-xs text-zincMuted hover:text-offwhite transition-all" data-filter="events">Live Events</button>
+                    <button class="filter-btn px-4 py-2 rounded-full border border-hairline font-mono text-xs text-zincMuted hover:text-offwhite transition-all" data-filter="strategy">Strategy & Growth</button>
+                    <button class="filter-btn px-4 py-2 rounded-full border border-hairline font-mono text-xs text-zincMuted hover:text-offwhite transition-all" data-filter="academia">Academia</button>
+                    <button class="filter-btn px-4 py-2 rounded-full border border-hairline font-mono text-xs text-zincMuted hover:text-offwhite transition-all" data-filter="gamedesign">Game Design</button>
+                </div>
+            </div>
+
+            <!-- 2-Column Architectural Work Grid -->
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Project 1: Fan Expo HQ -->
+                <article class="project-card group bg-surface border border-hairline border-hairline-hover rounded-2xl p-8 flex flex-col justify-between transition-all duration-300" data-category="events">
+                    <div>
+                        <div class="flex justify-between items-center gap-4 mb-6 font-mono text-xs text-zincMuted">
+                            <span class="text-amberAccent">01 / FAN EXPO HQ</span>
+                            <span>2024–PRESENT</span>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-offwhite group-hover:text-amberAccent transition-colors mb-3">
+                            Fan Expo Canada — Content & Programming Leadership
+                        </h3>
+                        <p class="text-sm text-zincMuted leading-relaxed mb-6">
+                            Senior Event Content/Programming Producer overseeing multi-track programming schedules, celebrity guest operations, and mainstage logistics for North America's premier pop culture convention.
+                        </p>
+                    </div>
+
+                    <div class="pt-6 border-t border-hairline flex items-center justify-between font-mono text-xs">
+                        <span class="text-zincMuted">Live Events · Content Architecture</span>
+                        <button onclick="openDrawer('fanexpo')" class="text-amberAccent hover:underline flex items-center gap-1">
+                            <span>Read Case Study</span>
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Project 2: Crunchyroll -->
+                <article class="project-card group bg-surface border border-hairline border-hairline-hover rounded-2xl p-8 flex flex-col justify-between transition-all duration-300" data-category="strategy">
+                    <div>
+                        <div class="flex justify-between items-center gap-4 mb-6 font-mono text-xs text-zincMuted">
+                            <span class="text-amberAccent">02 / CRUNCHYROLL</span>
+                            <span>2017–2023</span>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-offwhite group-hover:text-amberAccent transition-colors mb-3">
+                            Canadian Market Expansion & Live Activations
+                        </h3>
+                        <p class="text-sm text-zincMuted leading-relaxed mb-6">
+                            Canadian Country Manager & Mobile QA Lead. Engineered national retail & telco partnerships (Incomm, UNIQLO, Telus), tour activations (Blankfort, Notice Me Senpai), and mobile localization QA.
+                        </p>
+                    </div>
+
+                    <div class="pt-6 border-t border-hairline flex items-center justify-between font-mono text-xs">
+                        <span class="text-zincMuted">Strategy & Growth · Mobile QA</span>
+                        <button onclick="openDrawer('crunchyroll')" class="text-amberAccent hover:underline flex items-center gap-1">
+                            <span>Read Case Study</span>
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Project 3: JMFS Consulting -->
+                <article class="project-card group bg-surface border border-hairline border-hairline-hover rounded-2xl p-8 flex flex-col justify-between transition-all duration-300" data-category="strategy">
+                    <div>
+                        <div class="flex justify-between items-center gap-4 mb-6 font-mono text-xs text-zincMuted">
+                            <span class="text-amberAccent">03 / JMFS CONSULTING</span>
+                            <span>2010–PRESENT</span>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-offwhite group-hover:text-amberAccent transition-colors mb-3">
+                            Omnichannel & Creator Growth Advisory
+                        </h3>
+                        <p class="text-sm text-zincMuted leading-relaxed mb-6">
+                            Founder & Principal Consultant advising gaming and pop-culture brands including Team Salvato, Enthusiast Gaming, Anime North, and Hipster Lasers / TUBBZ on market positioning and experiential growth.
+                        </p>
+                    </div>
+
+                    <div class="pt-6 border-t border-hairline flex items-center justify-between font-mono text-xs">
+                        <span class="text-zincMuted">Advisory · Experiential Launch</span>
+                        <button onclick="openDrawer('jmfs')" class="text-amberAccent hover:underline flex items-center gap-1">
+                            <span>Read Case Study</span>
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Project 4: Anime North Otakubaloo -->
+                <article class="project-card group bg-surface border border-hairline border-hairline-hover rounded-2xl p-8 flex flex-col justify-between transition-all duration-300" data-category="events">
+                    <div>
+                        <div class="flex justify-between items-center gap-4 mb-6 font-mono text-xs text-zincMuted">
+                            <span class="text-amberAccent">04 / ANIME NORTH</span>
+                            <span>2024–PRESENT</span>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-offwhite group-hover:text-amberAccent transition-colors mb-3">
+                            Otakubaloo Outdoor Festival of Music
+                        </h3>
+                        <p class="text-sm text-zincMuted leading-relaxed mb-6">
+                            Executive Committee & Outdoor Stage Director for the Otakubaloo music festival at Toronto Congress Centre. Managing technical sound riders, stage crews, DJ lineups, and 5,000–6,000 attendee crowd flow.
+                        </p>
+                    </div>
+
+                    <div class="pt-6 border-t border-hairline flex items-center justify-between font-mono text-xs">
+                        <span class="text-zincMuted">Live Events · Stage Directing</span>
+                        <button onclick="openDrawer('animenorth')" class="text-amberAccent hover:underline flex items-center gap-1">
+                            <span>Read Case Study</span>
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Project 5: Mohawk College -->
+                <article class="project-card group bg-surface border border-hairline border-hairline-hover rounded-2xl p-8 flex flex-col justify-between transition-all duration-300" data-category="academia">
+                    <div>
+                        <div class="flex justify-between items-center gap-4 mb-6 font-mono text-xs text-zincMuted">
+                            <span class="text-amberAccent">05 / MOHAWK COLLEGE</span>
+                            <span>2022–PRESENT</span>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-offwhite group-hover:text-amberAccent transition-colors mb-3">
+                            Esports & Media Theory Curriculum Authoring
+                        </h3>
+                        <p class="text-sm text-zincMuted leading-relaxed mb-6">
+                            Part-Time Professor & PAC Advisory Member. Authored 12-module post-secondary courseware for Esports Fundamentals (MCOM 10431), Sponsorship Negotiations, and digital creator business models.
+                        </p>
+                    </div>
+
+                    <div class="pt-6 border-t border-hairline flex items-center justify-between font-mono text-xs">
+                        <span class="text-zincMuted">Academia · Pedagogy</span>
+                        <button onclick="openDrawer('mohawk')" class="text-amberAccent hover:underline flex items-center gap-1">
+                            <span>Read Case Study</span>
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Project 6: Tabletop & Game Lab -->
+                <article class="project-card group bg-surface border border-hairline border-hairline-hover rounded-2xl p-8 flex flex-col justify-between transition-all duration-300" data-category="gamedesign">
+                    <div>
+                        <div class="flex justify-between items-center gap-4 mb-6 font-mono text-xs text-zincMuted">
+                            <span class="text-amberAccent">06 / GAME DESIGN LAB</span>
+                            <span>ONGOING</span>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-offwhite group-hover:text-amberAccent transition-colors mb-3">
+                            Tabletop & Interactive Rulebook Systems
+                        </h3>
+                        <p class="text-sm text-zincMuted leading-relaxed mb-6">
+                            Creator of GNOMIC ("The No-Rules Game About Rules"), Midnight Alley Salvage (cozy shop-sim roguelike), Pillow Fight Fatal, and Kings of the Street rulesets.
+                        </p>
+                    </div>
+
+                    <div class="pt-6 border-t border-hairline flex items-center justify-between font-mono text-xs">
+                        <span class="text-zincMuted">Game Design · Systems</span>
+                        <button onclick="openDrawer('gamedesign')" class="text-amberAccent hover:underline flex items-center gap-1">
+                            <span>Read Case Study</span>
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- 4. CAPABILITIES & FOCUS (Horizontal Editorial Rows) -->
+        <section id="capabilities" class="py-24 lg:py-32 max-w-7xl mx-auto px-6 lg:px-12 border-b border-hairline">
+            <div class="max-w-3xl mb-16 space-y-2">
+                <span class="font-mono text-xs uppercase tracking-widest text-amberAccent">02 / CAPABILITIES</span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl text-offwhite">Capabilities & Focus</h2>
+            </div>
+
+            <div class="divide-y divide-hairline border-y border-hairline">
+                
+                <!-- Row 1 -->
+                <div class="py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-start group">
+                    <div class="md:col-span-1 font-mono text-xs text-amberAccent font-bold">01</div>
+                    <div class="md:col-span-4">
+                        <h3 class="font-display font-bold text-xl text-offwhite group-hover:text-amberAccent transition-colors">
+                            Live Event & Convention Programming
+                        </h3>
+                    </div>
+                    <div class="md:col-span-7 text-sm text-zincMuted leading-relaxed">
+                        End-to-end multi-track schedule design, celebrity guest panel moderations, stage technical riders, talent logistics, emergency crowd protocols, and mainstage operational execution.
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-start group">
+                    <div class="md:col-span-1 font-mono text-xs text-amberAccent font-bold">02</div>
+                    <div class="md:col-span-4">
+                        <h3 class="font-display font-bold text-xl text-offwhite group-hover:text-amberAccent transition-colors">
+                            Brand Strategy & Experiential Marketing
+                        </h3>
+                    </div>
+                    <div class="md:col-span-7 text-sm text-zincMuted leading-relaxed">
+                        Omnichannel marketing, Canadian market expansion, national retail partnerships, experiential pop-up tours, creator monetization strategies, and B2B sponsorship decks.
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-start group">
+                    <div class="md:col-span-1 font-mono text-xs text-amberAccent font-bold">03</div>
+                    <div class="md:col-span-4">
+                        <h3 class="font-display font-bold text-xl text-offwhite group-hover:text-amberAccent transition-colors">
+                            Post-Secondary Curriculum & Keynotes
+                        </h3>
+                    </div>
+                    <div class="md:col-span-7 text-sm text-zincMuted leading-relaxed">
+                        Authoring 12-module higher-education courseware, lecturing on Esports Fundamentals and Negotiation Theory, guest keynotes, and serving on collegiate Program Advisory Committees.
+                    </div>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-start group">
+                    <div class="md:col-span-1 font-mono text-xs text-amberAccent font-bold">04</div>
+                    <div class="md:col-span-4">
+                        <h3 class="font-display font-bold text-xl text-offwhite group-hover:text-amberAccent transition-colors">
+                            Tabletop & Digital Game System Design
+                        </h3>
+                    </div>
+                    <div class="md:col-span-7 text-sm text-zincMuted leading-relaxed">
+                        Interactive rulebook architecture, tabletop card game mechanics, cozy shop-simulator digital game loops, combat resolution systems, and video game QA testing.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 4. NEW ARCHIVE & CREDITS SECTION -->
+        <section id="archive" class="py-24 lg:py-32 max-w-7xl mx-auto px-6 lg:px-12 border-b border-hairline">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div class="space-y-2">
+                    <span class="font-mono text-xs uppercase tracking-widest text-amberAccent">03 / ARCHIVE & CREDITS</span>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-offwhite">Projects, Productions & Guest Spots</h2>
+                    <p class="text-xs text-zincMuted max-w-2xl pt-1">
+                        Selected freelance, contract, and creative credits (2014–2024). For full-time employed roles, connect on 
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-amberAccent underline hover:text-offwhite transition-colors">LinkedIn</a>.
+                    </p>
+                </div>
+
+                <!-- Archive Filter Tabs -->
+                <div class="flex flex-wrap gap-2">
+                    <button class="archive-filter-btn archive-filter-active px-3.5 py-1.5 rounded-full border border-hairline font-mono text-xs text-zincMuted hover:text-offwhite transition-all" data-archive-filter="all">ALL</button>
+                    <button class="archive-filter-btn px-3.5 py-1.5 rounded-full border border-hairline font-mono text-xs text-zincMuted hover:text-offwhite transition-all" data-archive-filter="events">EVENT MANAGEMENT</button>
+                    <button class="archive-filter-btn px-3.5 py-1.5 rounded-full border border-hairline font-mono text-xs text-zincMuted hover:text-offwhite transition-all" data-archive-filter="gaming">GAMING & QA</button>
+                    <button class="archive-filter-btn px-3.5 py-1.5 rounded-full border border-hairline font-mono text-xs text-zincMuted hover:text-offwhite transition-all" data-archive-filter="shows">LIVE SHOWS & STREAMS</button>
+                    <button class="archive-filter-btn px-3.5 py-1.5 rounded-full border border-hairline font-mono text-xs text-zincMuted hover:text-offwhite transition-all" data-archive-filter="community">COMMUNITY & PODCASTS</button>
+                </div>
+            </div>
+
+            <!-- Archive Grid -->
+            <div id="archive-items" class="space-y-3">
+                
+                <!-- EVENT MANAGEMENT -->
+                <div class="archive-row bg-surface border border-hairline hover:border-amberAccent/40 p-5 rounded-xl transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-4" data-category="events">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-3">
+                            <span class="font-mono text-[10px] uppercase tracking-wider text-amberAccent px-2 py-0.5 rounded bg-obsidian border border-hairline">EVENT MANAGEMENT</span>
+                            <h3 class="font-display font-bold text-base text-offwhite">Anime North — Gaming Track Leadership</h3>
+                        </div>
+                        <p class="text-xs text-zincMuted">Assistant Head of Gaming (Contract operations spanning console halls, tournaments, stage events, and volunteer management).</p>
+                    </div>
+                    <div class="font-mono text-xs text-amberAccent font-medium whitespace-nowrap">2014–2019, 2022–2024</div>
+                </div>
+
+                <div class="archive-row bg-surface border border-hairline hover:border-amberAccent/40 p-5 rounded-xl transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-4" data-category="events">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-3">
+                            <span class="font-mono text-[10px] uppercase tracking-wider text-amberAccent px-2 py-0.5 rounded bg-obsidian border border-hairline">EVENT MANAGEMENT</span>
+                            <h3 class="font-display font-bold text-base text-offwhite">Otakubaloo — Outdoor Music Festival</h3>
+                        </div>
+                        <p class="text-xs text-zincMuted">Event Producer & Outdoor Stage Director (Mainstage audio engineering, DJ lineups, safety protocols, crowd management for 5K–6K attendees).</p>
+                    </div>
+                    <div class="font-mono text-xs text-amberAccent font-medium whitespace-nowrap">2019, 2022–2024</div>
+                </div>
+
+                <div class="archive-row bg-surface border border-hairline hover:border-amberAccent/40 p-5 rounded-xl transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-4" data-category="events">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-3">
+                            <span class="font-mono text-[10px] uppercase tracking-wider text-amberAccent px-2 py-0.5 rounded bg-obsidian border border-hairline">EVENT MANAGEMENT</span>
+                            <h3 class="font-display font-bold text-base text-offwhite">EGLX (Enthusiast Gaming Live Expo)</h3>
+                        </div>
+                        <p class="text-xs text-zincMuted">Director of Cosplay (2015) · Volunteer Coordinator (2018)</p>
+                    </div>
+                    <div class="font-mono text-xs text-amberAccent font-medium whitespace-nowrap">2015, 2018</div>
+                </div>
+
+                <div class="archive-row bg-surface border border-hairline hover:border-amberAccent/40 p-5 rounded-xl transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-4" data-category="events">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-3">
+                            <span class="font-mono text-[10px] uppercase tracking-wider text-amberAccent px-2 py-0.5 rounded bg-obsidian border border-hairline">EVENT MANAGEMENT</span>
+                            <h3 class="font-display font-bold text-base text-offwhite">XP Game Developer Summit</h3>
+                        </div>
+                        <p class="text-xs text-zincMuted">Panel & Guest Wrangler (B2B speaker staging, speaker greenrooms, and panel execution).</p>
+                    </div>
+                    <div class="font-mono text-xs text-amberAccent font-medium whitespace-nowrap">2022</div>
+                </div>
+
+                <div class="archive-row bg-surface border border-hairline hover:border-amberAccent/40 p-5 rounded-xl transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-4" data-category="events">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-3">
+                            <span class="font-mono text-[10px] uppercase tracking-wider text-amberAccent px-2 py-0.5 rounded bg-obsidian border border-hairline">EVENT MANAGEMENT</span>
+                            <h3 class="font-display font-bold text-base text-offwhite">Regional Comic Cons (Hamilton, Niagara, Windsor)</h3>
+                        </div>
+                        <p class="text-xs text-zincMuted">Cosplay Coordinator — Hamilton Comicon (2014–2015), Niagara Comicon (2014–2015), Windsor Comicon (2016).</p>
+                    </div>
+                    <div class="font-mono text-xs text-amberAccent font-medium whitespace-nowrap">2014–2016</div>
+                </div>
+
+
+                <!-- GAMING — MOBILE & TABLETOP -->
+                <div class="archive-row bg-surface border border-hairline hover:border-amberAccent/40 p-5 rounded-xl transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-4" data-category="gaming">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-3">
+                            <span class="font-mono text-[10px] uppercase tracking-wider text-amberAccent px-2 py-0.5 rounded bg-obsidian border border-hairline">GAMING & QA</span>
+                            <h3 class="font-display font-bold text-base text-offwhite">Crunchyroll Games — Localization Manager</h3>
+                        </div>
+                        <p class="text-xs text-zincMuted">Managed text & script localization pipelines for <em>Mass For The Dead</em> (2020), <em>Princess Connect! Re: Dive</em> (2020), and <em>Mitrasphere</em> (2021).</p>
+                    </div>
+                    <div class="font-mono text-xs text-amberAccent font-medium whitespace-nowrap">2020–2021</div>
+                </div>
+
+                <div class="archive-row bg-surface border border-hairline hover:border-amberAccent/40 p-5 rounded-xl transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-4" data-category="gaming">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-3">
+                            <span class="font-mono text-[10px] uppercase tracking-wider text-amberAccent px-2 py-0.5 rounded bg-obsidian border border-hairline">GAMING & QA</span>
+                            <h3 class="font-display font-bold text-base text-offwhite">Crunchyroll Games — Q.A. Manager</h3>
+                        </div>
+                        <p class="text-xs text-zincMuted">Quality Assurance lead across mobile titles including <em>Princess Connect! Re: Dive</em> (2020), <em>Mitrasphere</em> (2021), and <em>The Eminence in Shadow</em> (2022).</p>
+                    </div>
+                    <div class="font-mono text-xs text-amberAccent font-medium whitespace-nowrap">2020–2022</div>
+                </div>
+
+                <div class="archive-row bg-surface border border-hairline hover:border-amberAccent/40 p-5 rounded-xl transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-4" data-category="gaming">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-3">
+                            <span class="font-mono text-[10px] uppercase tracking-wider text-amberAccent px-2 py-0.5 rounded bg-obsidian border border-hairline">GAMING & QA</span>
+                            <h3 class="font-display font-bold text-base text-offwhite">Jason Anarchy Games — Tabletop Playtester / QA</h3>
+                        </div>
+                        <p class="text-xs text-zincMuted">Ruleset QA and playtesting for indie card releases: <em>Heck: a Tiny Card Game</em> (2019), <em>Millennial Manatees</em> (2020), and <em>Your Friend is Sad</em> (2020).</p>
+                    </div>
+                    <div class="font-mono text-xs text-amberAccent font-medium whitespace-nowrap">2019–2020</div>
+                </div>
+
+                <div class="archive-row bg-surface border border-hairline hover:border-amberAccent/40 p-5 rounded-xl transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-4" data-category="gaming">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-3">
+                            <span class="font-mono text-[10px] uppercase tracking-wider text-amberAccent px-2 py-0.5 rounded bg-obsidian border border-hairline">GAMING & QA</span>
+                            <h3 class="font-display font-bold text-base text-offwhite">Nomnivore Games — Convention Operations</h3>
+                        </div>
+                        <p class="text-xs text-zincMuted">Convention booth staff, tabletop demonstration lead, and community engagement for Nomnivore Games titles.</p>
+                    </div>
+                    <div class="font-mono text-xs text-amberAccent font-medium whitespace-nowrap">2023</div>
+                </div>
+
+
+                <!-- LIVE SHOWS & VIRTUAL PRODUCTIONS -->
+                <div class="archive-row bg-surface border border-hairline hover:border-amberAccent/40 p-5 rounded-xl transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-4" data-category="shows">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-3">
+                            <span class="font-mono text-[10px] uppercase tracking-wider text-amberAccent px-2 py-0.5 rounded bg-obsidian border border-hairline">LIVE SHOWS</span>
+                            <h3 class="font-display font-bold text-base text-offwhite">Notice Me Senpai! & Anime Confessions</h3>
+                        </div>
+                        <p class="text-xs text-zincMuted">Creator & Host of live pop-culture game shows performed at major Canadian conventions and live streaming broadcasts.</p>
+                    </div>
+                    <div class="font-mono text-xs text-amberAccent font-medium whitespace-nowrap">2019, 2021</div>
+                </div>
+
+                <div class="archive-row bg-surface border border-hairline hover:border-amberAccent/40 p-5 rounded-xl transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-4" data-category="shows">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-3">
+                            <span class="font-mono text-[10px] uppercase tracking-wider text-amberAccent px-2 py-0.5 rounded bg-obsidian border border-hairline">VIRTUAL STREAMS</span>
+                            <h3 class="font-display font-bold text-base text-offwhite">Virtual Twitch Productions & Charity Streams</h3>
+                        </div>
+                        <p class="text-xs text-zincMuted">Producer / Director for <em>Otakubaloo: The Home Edition</em> on Twitch (2020) and Co-Producer for <em>The Lemon Cart Adventure</em> Charity Stream (2020).</p>
+                    </div>
+                    <div class="font-mono text-xs text-amberAccent font-medium whitespace-nowrap">2020</div>
+                </div>
+
+
+                <!-- COMMUNITY & PODCASTS / GUEST SPOTS -->
+                <div class="archive-row bg-surface border border-hairline hover:border-amberAccent/40 p-5 rounded-xl transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-4" data-category="community">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-3">
+                            <span class="font-mono text-[10px] uppercase tracking-wider text-amberAccent px-2 py-0.5 rounded bg-obsidian border border-hairline">COMMUNITY</span>
+                            <h3 class="font-display font-bold text-base text-offwhite">Fourth Floor — Community Management</h3>
+                        </div>
+                        <p class="text-xs text-zincMuted">Community Management, Twitch Chat Moderation, and Brand Voice alignment across client creator channels.</p>
+                    </div>
+                    <div class="font-mono text-xs text-amberAccent font-medium whitespace-nowrap">2021–2024</div>
+                </div>
+
+                <div class="archive-row bg-surface border border-hairline hover:border-amberAccent/40 p-5 rounded-xl transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-4" data-category="community">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-3">
+                            <span class="font-mono text-[10px] uppercase tracking-wider text-amberAccent px-2 py-0.5 rounded bg-obsidian border border-hairline">PODCASTS & TTRPG</span>
+                            <h3 class="font-display font-bold text-base text-offwhite">Forlorn Adventurers D&D Actual Play & Guest Spots</h3>
+                        </div>
+                        <p class="text-xs text-zincMuted">Core cast member (2020–2022) on Twitch & guest player across D&D Specials (<em>Gritty Halloween Parts 1 & 2</em>, <em>Green Hands</em>, <em>Sheep Shape</em>).</p>
+                    </div>
+                    <div class="font-mono text-xs text-amberAccent font-medium whitespace-nowrap">2020–2022</div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 5. ABOUT & BACKGROUND SUMMARY -->
+        <section id="about" class="py-24 lg:py-32 max-w-7xl mx-auto px-6 lg:px-12 border-b border-hairline">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="font-mono text-xs uppercase tracking-widest text-amberAccent">04 / ABOUT</span>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-offwhite">Jean-Marc Douville</h2>
+                    <p class="font-mono text-xs text-zincMuted">BASED IN BURLINGTON & TORONTO, ONTARIO</p>
+                </div>
+
+                <div class="lg:col-span-7 space-y-6 text-sm text-zincMuted leading-relaxed">
+                    <p>
+                        With over 15 years operating at the intersection of pop culture, live entertainment, and digital media, I’ve built a career around bringing complex creative ecosystems to life.
+                    </p>
+                    <p>
+                        Whether orchestrating mainstage schedules for tens of thousands of attendees at Fan Expo Canada, leading Canadian operations for Crunchyroll, or teaching business strategy at Mohawk College, my approach combines strategic operational rigor with an authentic respect for fan communities.
+                    </p>
+
+                    <div class="pt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs">
+                        <div class="p-4 rounded-xl bg-surface border border-hairline">
+                            <span class="text-amberAccent font-bold block mb-1">TMU / RYERSON UNIVERSITY</span>
+                            <span class="text-offwhite">Certificate in Psychology</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-surface border border-hairline">
+                            <span class="text-amberAccent font-bold block mb-1">MOHAWK COLLEGE</span>
+                            <span class="text-offwhite">Diploma in Advertising & Marketing Communications</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 6. STREAMLINED CONTACT & INQUIRY SECTION -->
+        <section id="contact" class="py-24 lg:py-32 max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Left: Direct Details -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div class="space-y-3">
+                        <span class="font-mono text-xs uppercase tracking-widest text-amberAccent">05 / CONTACT</span>
+                        <h2 class="font-display font-bold text-3xl sm:text-4xl text-offwhite">Start a Conversation</h2>
+                        <p class="text-sm text-zincMuted">Available for advisory engagements, programming contracts, keynotes, and game design inquiries.</p>
+                    </div>
+
+                    <!-- One-Click Email Copy Card -->
+                    <div class="bg-surface border border-hairline p-6 rounded-2xl space-y-3">
+                        <span class="font-mono text-[10px] text-zincMuted uppercase tracking-wider block">DIRECT EMAIL</span>
+                        <div class="flex items-center justify-between gap-4">
+                            <span id="email-address" class="font-mono text-sm sm:text-base text-offwhite font-bold">jm@jmdouville.com</span>
+                            <button onclick="copyEmail()" class="px-3.5 py-1.5 rounded-full border border-hairline bg-obsidian hover:bg-amberAccent hover:text-obsidian font-mono text-xs text-offwhite transition-all">
+                                Copy Email
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="font-mono text-xs text-zincMuted space-y-2">
+                        <div>LOCATION: <span class="text-offwhite">Burlington & Greater Toronto Area, ON</span></div>
+                        <div>RESPONSE TIME: <span class="text-offwhite">Within 24–48 Hours</span></div>
+                    </div>
+                </div>
+
+                <!-- Right: Interactive Inquiry Launcher -->
+                <div class="lg:col-span-7 bg-surface border border-hairline p-8 rounded-2xl space-y-6">
+                    <div>
+                        <h3 class="font-display font-bold text-xl text-offwhite">Select Inquiry Focus</h3>
+                        <p class="font-mono text-xs text-zincMuted mt-1">Select an objective to format a direct email draft.</p>
+                    </div>
+
+                    <!-- Category Pills -->
+                    <div class="flex flex-wrap gap-2" id="inquiry-selector">
+                        <button type="button" onclick="selectInquiry('Event Programming', this)" class="inquiry-pill active-inquiry-pill px-4 py-2 rounded-full border border-hairline font-mono text-xs transition-all">
+                            Event Programming
+                        </button>
+                        <button type="button" onclick="selectInquiry('Brand Strategy', this)" class="inquiry-pill px-4 py-2 rounded-full border border-hairline font-mono text-xs text-zincMuted transition-all">
+                            Brand & Growth Strategy
+                        </button>
+                        <button type="button" onclick="selectInquiry('Academia & Speaking', this)" class="inquiry-pill px-4 py-2 rounded-full border border-hairline font-mono text-xs text-zincMuted transition-all">
+                            Academia & Speaking
+                        </button>
+                        <button type="button" onclick="selectInquiry('Game Design', this)" class="inquiry-pill px-4 py-2 rounded-full border border-hairline font-mono text-xs text-zincMuted transition-all">
+                            Game Design
+                        </button>
+                    </div>
+
+                    <!-- Form Inputs -->
+                    <form id="inquiry-form" onsubmit="handleInquirySubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="sender-name" class="block font-mono text-[11px] text-zincMuted mb-1">YOUR NAME / STUDIO</label>
+                                <input type="text" id="sender-name" required placeholder="e.g. Alex Vance" class="w-full px-4 py-3 rounded-xl bg-obsidian border border-hairline text-sm text-offwhite placeholder-zincMuted focus:outline-none focus:border-amberAccent transition-colors">
+                            </div>
+                            <div>
+                                <label for="sender-email" class="block font-mono text-[11px] text-zincMuted mb-1">YOUR EMAIL</label>
+                                <input type="email" id="sender-email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl bg-obsidian border border-hairline text-sm text-offwhite placeholder-zincMuted focus:outline-none focus:border-amberAccent transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="inquiry-details" class="block font-mono text-[11px] text-zincMuted mb-1">PROJECT SCOPE & TIMELINE</label>
+                            <textarea id="inquiry-details" rows="3" required placeholder="Outline key objectives or timing..." class="w-full px-4 py-3 rounded-xl bg-obsidian border border-hairline text-sm text-offwhite placeholder-zincMuted focus:outline-none focus:border-amberAccent transition-colors"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 rounded-full bg-offwhite hover:bg-amberAccent text-obsidian font-mono font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                            <span>Open Email Draft</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-hairline bg-obsidian py-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-6 font-mono text-xs text-zincMuted">
+            <div>
+                © <span id="current-year">2026</span> Jean-Marc Douville · JMFS Consulting
+            </div>
+
+            <div class="flex items-center gap-6">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-amberAccent transition-colors">LINKEDIN</a>
+                <a href="https://twitch.tv" target="_blank" rel="noopener noreferrer" class="hover:text-amberAccent transition-colors">TWITCH</a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-amberAccent transition-colors">GITHUB</a>
+                <a href="#hero" class="hover:text-offwhite transition-colors ml-4">TOP ↑</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- 7. EDITORIAL SLIDE-OVER DRAWER (CASE STUDY DETAIL) -->
+    <div id="drawer-backdrop" class="drawer-backdrop fixed inset-0 z-50 bg-obsidian/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="fixed inset-0" onclick="closeDrawer()"></div>
+        
+        <aside id="drawer-panel" class="drawer-content fixed top-0 right-0 h-full w-full max-w-2xl bg-surface border-l border-hairline p-8 sm:p-12 overflow-y-auto z-10 translate-x-full">
+            
+            <!-- Close Button -->
+            <button onclick="closeDrawer()" aria-label="Close Case Study Drawer" class="mb-8 p-2 rounded-full border border-hairline text-zincMuted hover:text-offwhite hover:border-amberAccent transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+
+            <!-- Metadata Header -->
+            <div id="drawer-tag" class="font-mono text-xs text-amberAccent tracking-widest uppercase mb-2"></div>
+            <h2 id="drawer-title" class="font-display font-bold text-3xl text-offwhite mb-2"></h2>
+            <div id="drawer-role" class="font-mono text-xs text-zincMuted mb-8 pb-6 border-b border-hairline"></div>
+
+            <!-- Case Study Content Sections -->
+            <div class="space-y-8 text-sm leading-relaxed text-zincMuted">
+                <div>
+                    <h3 class="font-display font-bold text-base text-offwhite uppercase tracking-wider mb-2">01 / OVERVIEW & SCOPE</h3>
+                    <p id="drawer-overview"></p>
+                </div>
+
+                <div>
+                    <h3 class="font-display font-bold text-base text-offwhite uppercase tracking-wider mb-2">02 / STRATEGIC CHALLENGE</h3>
+                    <p id="drawer-challenge"></p>
+                </div>
+
+                <div>
+                    <h3 class="font-display font-bold text-base text-offwhite uppercase tracking-wider mb-2">03 / EXECUTION & DELIVERABLES</h3>
+                    <ul id="drawer-deliverables" class="list-disc list-inside space-y-2 font-mono text-xs text-zincMuted"></ul>
+                </div>
+
+                <div class="p-6 rounded-xl bg-obsidian border border-hairline">
+                    <h3 class="font-display font-bold text-xs text-amberAccent uppercase tracking-widest mb-1">04 / KEY OUTCOMES</h3>
+                    <p id="drawer-outcomes" class="text-xs text-offwhite font-mono leading-relaxed"></p>
+                </div>
+            </div>
+
+        </aside>
+    </div>
+
+
+    <!-- JAVASCRIPT INTERACTIVE LOGIC -->
+    <script>
+        // --- 1. CASE STUDY DRAWER DATA ---
+        const drawerData = {
+            fanexpo: {
+                tag: 'LIVE EVENTS · FAN EXPO HQ',
+                title: 'Fan Expo Canada Content Leadership',
+                role: 'Senior Event Content / Programming Producer (2024–Present)',
+                overview: 'Directing schedule operations, celebrity Q&A programming, guest logistics, and community stages across Fan Expo Canada and regional pop-culture conventions.',
+                challenge: 'Managing over 200 hours of concurrent live programming across multiple convention halls without schedule drift, while balancing talent requirements and crowd dynamics for 100,000+ attendees.',
+                deliverables: [
+                    'Multi-track mainstage and community room scheduling architecture',
+                    'Celebrity guest panel moderations and VIP talent operational support',
+                    'On-site stage crew and AV technical protocol management',
+                    'Cross-functional coordination with security, press, and floor operations'
+                ],
+                outcomes: 'Delivered 100% on-time panel execution across major Toronto events with zero major schedule delays and elevated attendee survey ratings.'
+            },
+            crunchyroll: {
+                tag: 'STRATEGY & GAMING · CRUNCHYROLL',
+                title: 'Canadian Market Expansion, Mobile QA & Localization',
+                role: 'Canadian Country Manager, Localization Manager & QA Lead (2017–2023)',
+                overview: 'Spearheaded Crunchyroll’s physical presence, retail partnerships, consumer pop-ups, mobile game localization, and quality assurance testing across Canada.',
+                challenge: 'Establishing a localized physical brand footprint in Canada while simultaneously managing localization pipelines and QA testing under rapid global game launch cycles.',
+                deliverables: [
+                    'National retail & partner deals with Telus, UNIQLO, Incomm, and Notice Me Senpai',
+                    'Localization management for mobile titles: Overlord: Mass For The Dead, Princess Connect! Re: Dive, and Mitrasphere',
+                    'QA Lead across Princess Connect! Re: Dive, Mitrasphere, and The Eminence in Shadow',
+                    'Experiential pop-up tours (Blankfort, Notice Me Senpai) across Canadian fan conventions'
+                ],
+                outcomes: 'Established Crunchyroll as Canada’s leading anime platform with nationwide retail visibility, clean localized mobile game releases, and multi-market pop-up engagements.'
+            },
+            jmfs: {
+                tag: 'STRATEGY & ADVISORY · JMFS CONSULTING',
+                title: 'Omnichannel Brand Advisory',
+                role: 'Founder & Principal Consultant (2010–Present)',
+                overview: 'Providing strategic marketing, experiential event design, and growth consulting for indie gaming studios and entertainment IPs.',
+                challenge: 'Helping niche pop-culture and indie gaming properties scale their commercial footprint without diluting community trust.',
+                deliverables: [
+                    'Go-to-market strategies for Team Salvato, Enthusiast Gaming, & TUBBZ',
+                    'Influencer campaign design and talent partnership frameworks',
+                    'B2B sponsorship decks for regional conventions and music festivals',
+                    'Booth architecture and live engagement mechanics'
+                ],
+                outcomes: 'Drove multi-million impression campaigns and unlocked new commercial revenue streams for partner studios.'
+            },
+            animenorth: {
+                tag: 'LIVE EVENTS · ANIME NORTH & OTAKUBALOO',
+                title: 'Otakubaloo Music Festival & Gaming Leadership',
+                role: 'Outdoor Stage Director & Assistant Head of Gaming (2014–Present)',
+                overview: 'Over decade-long tenure supporting Canada’s largest community-run fan convention, leading gaming department operations and directing the Otakubaloo outdoor music festival.',
+                challenge: 'Coordinating high-power outdoor audio engineering, DJ lineups, safety barriers, and crowd flow for 5,000–6,000 festival attendees at Toronto Congress Centre.',
+                deliverables: [
+                    'Outdoor stage direction, DJ scheduling, and sound crew management',
+                    'Gaming department management across 9+ convention editions (2014–2019, 2022–2024)',
+                    'Safety barriers, emergency protocols, and crowd flow logistics for 5K–6K outdoor concertgoers',
+                    'Pioneered Otakubaloo: The Home Edition Twitch virtual broadcast (2020)'
+                ],
+                outcomes: 'Executed consecutive sold-out outdoor concert series and gaming halls with exemplary safety records and fan praise.'
+            },
+            mohawk: {
+                tag: 'ACADEMIA · MOHAWK COLLEGE',
+                title: 'Esports & Media Curriculum Authoring',
+                role: 'Part-Time Professor & PAC Advisory Member (2022–Present)',
+                overview: 'Authoring 12-module post-secondary courseware and teaching Esports Fundamentals, Negotiation Strategy, and Media Monetization.',
+                challenge: 'Translating fast-moving gaming industry mechanics into a rigorous, accredited academic curriculum.',
+                deliverables: [
+                    'MCOM 10431 Esports Fundamentals course authoring & instruction',
+                    'Sales & Sponsorship Negotiations workshop design',
+                    'Program Advisory Committee (PAC) industry updates'
+                ],
+                outcomes: 'Instructed 200+ students with practical industry skills leading to high graduate placement across Canadian media organizations.'
+            },
+            gamedesign: {
+                tag: 'GAME DESIGN · INDEPENDENT LAB',
+                title: 'Tabletop & Interactive Rulebook Systems',
+                role: 'Creator, Systems Designer & Playtester',
+                overview: 'Building original tabletop rulebooks, playtesting indie games, and designing cozy digital game loops.',
+                challenge: 'Creating intuitive rule systems that encourage player strategy without overwhelming rulebook friction.',
+                deliverables: [
+                    'GNOMIC: The No-Rules Game About Rules (Card System)',
+                    'Midnight Alley Salvage: Cozy roguelike shop simulator loop',
+                    'QA Playtester for Jason Anarchy Games (Heck, Millennial Manatees, Your Friend is Sad)',
+                    'Pillow Fight Fatal: Whimsical brawler combat resolution mechanics'
+                ],
+                outcomes: 'Developed modular game rulebooks tested across local tabletop playtesting groups and indie design circles.'
+            }
+        };
+
+        // --- 2. DRAWER CONTROLS ---
+        function openDrawer(key) {
+            const data = drawerData[key];
+            if (!data) return;
+
+            document.getElementById('drawer-tag').innerText = data.tag;
+            document.getElementById('drawer-title').innerText = data.title;
+            document.getElementById('drawer-role').innerText = data.role;
+            document.getElementById('drawer-overview').innerText = data.overview;
+            document.getElementById('drawer-challenge').innerText = data.challenge;
+            document.getElementById('drawer-outcomes').innerText = data.outcomes;
+
+            const list = document.getElementById('drawer-deliverables');
+            list.innerHTML = '';
+            data.deliverables.forEach(item => {
+                const li = document.createElement('li');
+                li.innerText = item;
+                list.appendChild(li);
+            });
+
+            const backdrop = document.getElementById('drawer-backdrop');
+            const panel = document.getElementById('drawer-panel');
+
+            backdrop.classList.remove('opacity-0', 'pointer-events-none');
+            panel.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrawer() {
+            const backdrop = document.getElementById('drawer-backdrop');
+            const panel = document.getElementById('drawer-panel');
+
+            backdrop.classList.add('opacity-0', 'pointer-events-none');
+            panel.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeDrawer();
+        });
+
+        // --- 3. FILTER SYSTEM ---
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('filter-btn-active'));
+                btn.classList.add('filter-btn-active');
+
+                const filter = btn.getAttribute('data-filter');
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // --- 3B. ARCHIVE FILTER SYSTEM ---
+        const archiveButtons = document.querySelectorAll('.archive-filter-btn');
+        const archiveRows = document.querySelectorAll('.archive-row');
+
+        archiveButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                archiveButtons.forEach(b => {
+                    b.classList.remove('archive-filter-active', 'bg-white/10', 'text-offwhite', 'border-amberAccent/50');
+                });
+                btn.classList.add('archive-filter-active', 'bg-white/10', 'text-offwhite', 'border-amberAccent/50');
+
+                const filter = btn.getAttribute('data-archive-filter');
+                archiveRows.forEach(row => {
+                    if (filter === 'all' || row.getAttribute('data-category') === filter) {
+                        row.style.display = 'flex';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // --- 4. INQUIRY SELECTOR ---
+        let selectedInquiry = 'Event Programming';
+
+        function selectInquiry(category, element) {
+            selectedInquiry = category;
+            document.querySelectorAll('.inquiry-pill').forEach(p => {
+                p.classList.remove('bg-amberAccent', 'text-obsidian', 'border-amberAccent');
+                p.classList.add('text-zincMuted');
+            });
+            element.classList.add('bg-amberAccent', 'text-obsidian', 'border-amberAccent');
+            element.classList.remove('text-zincMuted');
+        }
+
+        function handleInquirySubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('sender-name').value;
+            const email = document.getElementById('sender-email').value;
+            const details = document.getElementById('inquiry-details').value;
+
+            const subject = encodeURIComponent(`[Inquiry - JMDOUVILLE.COM] ${selectedInquiry} — ${name}`);
+            const body = encodeURIComponent(`Hello Jean-Marc,\n\nI am reaching out regarding: ${selectedInquiry}\n\nFrom: ${name} (${email})\n\nNotes:\n${details}\n\nBest,\n${name}`);
+
+            window.location.href = `mailto:jm@jmdouville.com?subject=${subject}&body=${body}`;
+            showToast('Mail client launched with formatted inquiry!');
+        }
+
+        // --- 5. CLIPBOARD & TOAST ---
+        function copyEmail() {
+            const emailText = document.getElementById('email-address').innerText;
+            const tempInput = document.createElement('textarea');
+            tempInput.value = emailText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            showToast('Copied email (jm@jmdouville.com) to clipboard');
+        }
+
+        function showToast(msg) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'bg-surface border border-amberAccent px-4 py-2.5 rounded-full text-offwhite font-mono text-xs shadow-xl pointer-events-auto transition-all duration-300';
+            toast.innerText = msg;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.classList.add('opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // --- 6. MOBILE MENU ---
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileBtn.addEventListener('click', () => {
+            const open = !mobileMenu.classList.contains('hidden');
+            if (open) {
+                mobileMenu.classList.add('hidden');
+                hamIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            } else {
+                mobileMenu.classList.remove('hidden');
+                hamIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            }
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                hamIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+
+        document.getElementById('current-year').innerText = new Date().getFullYear();
+    </script>
+</body>
+</html>
